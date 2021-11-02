@@ -24,15 +24,25 @@ jobs:
     - name: Test
       run: go test hexagonal/tests
 
-    - name: Code coverage
-      run: |
-        go test hexagonal/tests -v -covermode=count -coverprofile=coverage.out
+  coverage:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
 
-    - name: Convert coverage.out to coverage.lcov
-      uses: jandelgado/gcov2lcov-action@v1.0.6
+      - name: Set up Go
+        uses: actions/setup-go@v2
+        with:
+          go-version: 1.16
 
-    - name: Upload coverage to Coveralls
-      uses: coverallsapp/github-action@1.1.3
-      with:
-        github-token: ${{ secrets.COVERALLS_TOKEN }}
-        path-to-lcov: coverage.lcov
+      - name: Code coverage
+        run: |
+          go test hexagonal/tests -v -covermode=count -coverprofile=coverage.out
+
+      - name: Convert coverage.out to coverage.lcov
+        uses: jandelgado/gcov2lcov-action@v1.0.6
+
+      - name: Upload coverage to Coveralls
+        uses: coverallsapp/github-action@1.1.3
+        with:
+          github-token: ${{ secrets.COVERALLS_TOKEN }}
+          path-to-lcov: coverage.lcov
