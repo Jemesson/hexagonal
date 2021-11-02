@@ -9,11 +9,11 @@ Changed the app with some refactorings, and to make the understanding easier of 
 1. [Summary](#summary)
    1. [What is a port?](#ports)
    2. [What is an adapter?](#adapters)
-2. [Application Stack](#application-stack)
-3. [Setup](#setup)
+2. [Setup](#setup)
+3. [Stack](#stack)
 4. [References](#references)
 
-### Summary
+## Summary
 The Ports & Adapters Architecture (aka Hexagonal Architecture) was thought of by Alistair Cockburn and written down on 
 his blog in 2005. This is how he defines its goal in one sentence:
 > Allows an application to equally be driven by users, programs, automated test or batch scripts, and to be developed and tested in isolation from its eventual run-time devices and databases.
@@ -33,14 +33,7 @@ Adapters can be external services that wants to communicate with the application
 
 > Example 2: An output adapter adapters are called by our core business, for instance, persisting data into a  database.
 
-### Application Stack
-* [Go](https://golang.org/)
-* [Gin](https://github.com/gin-gonic/gin)
-* [Testify](https://github.com/stretchr/testify)
-* [GoMock](https://github.com/golang/mock)
-* [UUID](https://github.com/google/uuid)
-
-### Setup
+## Setup
 
 Run the app:
 > go build hexagonal/cmd/serve
@@ -48,7 +41,14 @@ Run the app:
 Test:
 > go test tests
 
-### References
+## Stack
+* [Go](https://golang.org/)
+* [Gin](https://github.com/gin-gonic/gin)
+* [Testify](https://github.com/stretchr/testify)
+* [GoMock](https://github.com/golang/mock)
+* [UUID](https://github.com/google/uuid)
+
+## References
 1. [Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
 2. [Spring with Hexagonal](https://reflectoring.io/spring-hexagonal/)
 3. [Go article](https://medium.com/@matiasvarela?p=cfd4e436faa3)
