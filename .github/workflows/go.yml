@@ -22,7 +22,7 @@ jobs:
       run: go build hexagonal/cmd/serve
 
     - name: Run Unit tests
-      run: go test -race -covermode atomic -coverprofile=covprofile ./...
+      run: go test hexagonal/tests -race -covermode atomic -coverprofile=covprofile ./...
 
     - name: Install goveralls
       run: go install github.com/mattn/goveralls@latest
