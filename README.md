@@ -8,9 +8,10 @@ Changed the app with some refactorings, and to make the understanding easier of 
 ## Topics:
 1. [Summary](#summary)
    1. [What is a port?](#ports)
-   2. [What is an Adapter?](#adapters)
+   2. [What is an adapter?](#adapters)
 2. [Application Stack](#application-stack)
-3. [References](#references)
+3. [Setup](#setup)
+4. [References](#references)
 
 ### Summary
 The Ports & Adapters Architecture (aka Hexagonal Architecture) was thought of by Alistair Cockburn and written down on 
@@ -27,7 +28,8 @@ In many languages, it will be an interface. For example, it can be an interface 
 ### Adapters
 Adapters can be external services that wants to communicate with the application business logic.
 
-> Example 1: An input adapter could be a web interface. When a user clicks a button, the web adapter calls a certain input port to.
+> Example 1: An input adapter could be a web interface. When a user clicks a button, the web adapter calls a certain
+> input port to communicate with the core.
 
 > Example 2: An output adapter adapters are called by our core business, for instance, persisting data into a  database.
 
@@ -38,8 +40,17 @@ Adapters can be external services that wants to communicate with the application
 * [GoMock](https://github.com/golang/mock)
 * [UUID](https://github.com/google/uuid)
 
+### Setup
+
+Run the app:
+> go build hexagonal/cmd/serve
+
+Test:
+> go test tests
+
 ### References
 1. [Alistair Cockburn](https://alistair.cockburn.us/hexagonal-architecture/)
 2. [Spring with Hexagonal](https://reflectoring.io/spring-hexagonal/)
 3. [Go article](https://medium.com/@matiasvarela?p=cfd4e436faa3)
 4. [FullCycle](https://fullcycle.com.br/)
+5. [Go By example](https://gobyexample.com/)

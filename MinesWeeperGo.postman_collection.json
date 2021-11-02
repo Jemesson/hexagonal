@@ -1,0 +1,95 @@
+{
+	"info": {
+		"_postman_id": "19c4d6b0-e239-4ffe-896c-8b6aef4f6e05",
+		"name": "MinesWeeper go",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Create a Game",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"CampoMinadoWin2021\",\n    \"size\": 3,\n    \"bombs\": 3\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/games",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get a Game",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "text"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/games/b8dfbfd2-9cdb-4652-8eda-a68d629608a7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games",
+						"b8dfbfd2-9cdb-4652-8eda-a68d629608a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update a Game",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"row\": 0,\n    \"col\": 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/games/b8dfbfd2-9cdb-4652-8eda-a68d629608a7",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"games",
+						"b8dfbfd2-9cdb-4652-8eda-a68d629608a7"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
