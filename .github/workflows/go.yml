@@ -21,5 +21,13 @@ jobs:
     - name: Build
       run: go build hexagonal/cmd/serve
 
-    - name: Test
-      run: go test hexagonal/tests
+    - name: Run Unit tests
+      run: go test $(go list ./... | grep -v /cmd/ | grep -v /config/) -v -race -covermode atomic -coverpkg=./... -coverprofile=covprofile ./...
+
+    - name: Install goveralls
+      run: go install github.com/mattn/goveralls@latest
+
+    - name: Send coverage
+      env:
+        COVERALLS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: goveralls -coverprofile=covprofile -service=github
