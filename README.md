@@ -1,4 +1,5 @@
-# Hexagonal architecture (Ports and Adapters) [![Go](https://github.com/Jemesson/hexagonal/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/Jemesson/hexagonal/actions/workflows/go.yml)
+# Hexagonal architecture (Ports and Adapters)
+[![Go](https://github.com/Jemesson/hexagonal/actions/workflows/go.yml/badge.svg?branch=main)](https://github.com/Jemesson/hexagonal/actions/workflows/go.yml) [![Coverage Status](https://coveralls.io/repos/github/Jemesson/hexagonal/badge.svg?branch=main)](https://coveralls.io/github/Jemesson/hexagonal?branch=main)
 
 The application is based from a [Go article](https://medium.com/@matiasvarela?p=cfd4e436faa3).
 Changed the app with some refactorings, and to make the understanding easier of each component.
