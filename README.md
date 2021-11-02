@@ -39,7 +39,7 @@ Run the app:
 > go build hexagonal/cmd/serve
 
 Test:
-> go test tests
+> go test hexagonal/tests
 
 ## Stack
 * [Go](https://golang.org/)
